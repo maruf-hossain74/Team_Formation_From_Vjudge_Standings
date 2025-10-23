@@ -135,7 +135,13 @@ Leaderboards/             Python Script           Final_Teams.xlsx
 👥 Enter team size (default 3): 3
 ```
 
-3. Output:
+## 3. Output:
+
+<div align="center">
+  <img src="https://github.com/maruf-hossain74/Sharing-Repo/blob/main/Images/output_Team_formation.png" 
+       alt="Vjudge standings" 
+       width="50%">
+</div>
 
 * `Final_Teams.xlsx` with sheets:
 
