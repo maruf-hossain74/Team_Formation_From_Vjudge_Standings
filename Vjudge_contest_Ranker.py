@@ -1,3 +1,37 @@
+"""
+🏆 VJudge Team Maker — Local Excel Mode
+
+Working Process:
+----------------
+1. The script looks for Excel leaderboard files inside the folder named 'Leaderboards'. 
+   Each file should represent a single contest and contain at least two columns: 'Username' and 'Rank'.
+
+2. For each Excel file:
+   - The script reads all rows and extracts participants' usernames and their ranks.
+   - For each participant, it calculates the points using the formula:
+        points = ceil(1800 / (rank + 5))
+
+3. The points from all contests are aggregated:
+   - Each participant's points from different contests are summed to calculate their total points.
+
+4. The script prompts the user to enter a team size (default = 3).
+
+5. Sorting and Team Formation:
+   - Participants are sorted in descending order based on their total points (FinalPoints).
+   - Teams are formed consecutively (top-ranked participants first) with the specified team size.
+
+6. Output:
+   - The final Excel file ('final_teams.xlsx') is generated.
+   - Sheet "Participants": all participants with points per contest and FinalPoints.
+   - Sheets "Team_1", "Team_2", ...: each sheet contains a single team with participants and their points.
+
+7. Notes:
+   - If a participant does not appear in a contest, they are assigned 0 points for that contest.
+   - The script handles multiple Excel files in the 'Leaderboards' directory automatically.
+   - Requires pandas and openpyxl libraries:
+       pip install pandas openpyxl
+"""
+
 import os
 import math
 import pandas as pd
