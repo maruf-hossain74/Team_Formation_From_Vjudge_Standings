@@ -102,7 +102,6 @@ def write_participants_and_teams_to_excel(all_scores: dict, team_size: int, out_
             print(f"💾 Saved {team_name} to {out_file}")
 
 def main():
-    print("🏆 VJudge Team Maker — Local Excel Mode")
     
     # Input directory where the Leaderboards XLSX files are stored
     Leaderboards_dir = "Leaderboards"
@@ -114,6 +113,10 @@ def main():
         return
 
     # Prompt for team size
+    print("\n💡 Each team will be formed based on final ranking points.")
+    print("   For example, if you enter 3, teams of 3 members will be formed sequentially from top scorers.\n")
+    print()
+    
     try:
         team_size = int(input("👥 Enter team size (default 3): ").strip() or "3")
     except ValueError:
@@ -146,4 +149,16 @@ def main():
         print("\n❌ No points computed. Nothing to save.")
 
 if __name__ == "__main__":
+    print()
+    print("🏆 ICPC/IUPC Team Formation — Local Excel Mode")
+    print("""
+    📘 Instructions:
+    1️⃣  Go to your VJudge contest page while logged in.
+    2️⃣  Click the 'Setting' icon on the standings page.
+    3️⃣  Then Click on 'Rank' to download the leaderboard file.
+    4️⃣  Save all downloaded contest files inside the 'Leaderboards' folder.
+        Example: Leaderboards/01.xlsx, Leaderboards/02.xlsx, Leaderboards/03.xlsx
+    5️⃣  Then run this script to calculate total points and form balanced teams.
+    """)
+
     main()
