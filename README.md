@@ -65,9 +65,13 @@ Each contest Excel file in the `Leaderboards` folder must have the following col
 
 ---
 
-## How to download Excel File
+## How to download contest standings as Excel File
+<div align="center">
+  <img src="https://github.com/maruf-hossain74/Sharing-Repo/blob/main/Images/Download_leaderboard.png" 
+       alt="Vjudge standings" 
+       width="50%">
+</div>
 
-![Vjudge standings](https://toffeeshare.com/static/media/logo.42a58a0d.png)
 
 ---
 
