@@ -61,7 +61,6 @@ Each contest Excel file in the `Leaderboards` folder must have the following col
 * **Username**: The participant's exact name (case-sensitive).
 * **Rank**: Integer representing the participant’s rank in that contest.
 * Missing participants in a contest will automatically receive **0 points**.
-* Downloaded .xlsx file from vjudge contains **"Team"** field, please replace **"Team"** with **"Username"**
 
 ---
 

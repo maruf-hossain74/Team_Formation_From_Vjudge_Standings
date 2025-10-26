@@ -49,7 +49,7 @@ def read_excel_file(file_path: str):
         # Assuming columns are named "Username" and "Rank", adjust if necessary
         standings = []
         for _, row in df.iterrows():
-            username = str(row['Username']).strip()
+            username = str(row['Team']).strip()
             try:
                 rank = int(row['Rank'])
                 standings.append((username, rank))
