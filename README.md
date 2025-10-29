@@ -1,7 +1,3 @@
-# next time formation will be calculated using the equation:
-# Point = ceil(1600 / (rank + 7))
-
-
 # Team Formation From VJudge Standings
 
 This repository provides a **Python tool** to process VJudge contest results from Excel exports, calculate points for each participant, and form balanced teams automatically. It supports multiple contests and generates a final Excel file with both participant rankings and team allocations.
@@ -83,7 +79,7 @@ Each contest Excel file in the `Leaderboards` folder must have the following col
 Points for each participant are calculated using the formula:
 
 ```
-points = ceil(1800 / (rank + 5))
+points = ceil(1600 / (rank + 7))
 ```
 
 * Higher rank → more points.

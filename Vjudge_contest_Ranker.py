@@ -30,17 +30,44 @@ Working Process:
    - The script handles multiple Excel files in the 'Leaderboards' directory automatically.
    - Requires pandas and openpyxl libraries:
        pip install pandas openpyxl
+       
+       
+
+
+# File name (in the same directory)
+file_name = "requirements.txt"  # change this to your file name
+
+# Get full path of the file
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), file_name)
+
+# Check if file exists
+if not os.path.exists(file_path):
+    print(f"File '{file_name}' not found.")
+    sys.exit(1)
+
+# Read dependencies line by line
+with open(file_path, "r") as f:
+    dependencies = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
+# Install each dependency
+for dep in dependencies:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", dep])
 """
 
+
+
+
 import os
+import sys
 import math
+import subprocess
 import pandas as pd
 from collections import defaultdict
 
 # ---------- Points formula ----------
 def points_for_rank(rank: int) -> int:
     """Compute points based on rank."""
-    return math.ceil(1800 / (rank + 5))
+    return math.ceil(1600 / (rank + 7))
 
 def read_excel_file(file_path: str):
     """Read an Excel file and return a list of (username, rank) tuples."""
@@ -102,7 +129,25 @@ def write_participants_and_teams_to_excel(all_scores: dict, team_size: int, out_
             print(f"💾 Saved {team_name} to {out_file}")
 
 def main():
-    
+    # File name (in the same directory)
+    file_name = "Requirements.txt"  # change this to your file name
+
+    # Get full path of the file
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), file_name)
+
+    # Check if file exists
+    if not os.path.exists(file_path):
+        print(f"File '{file_name}' not found.")
+        sys.exit(1)
+
+    # Read dependencies line by line
+    with open(file_path, "r") as f:
+        dependencies = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
+    # Install each dependency
+    for dep in dependencies:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", dep])
+        
     # Input directory where the Leaderboards XLSX files are stored
     Leaderboards_dir = "Leaderboards"
     
